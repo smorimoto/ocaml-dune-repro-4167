@@ -15,4 +15,6 @@ jobs:
           ocaml-version: 4.12.x
           dune-cache: true
 
-      - run: opam depext --install uri
+      - run: opam depext uri
+
+      - run: opam install uri --verbose
