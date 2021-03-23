@@ -13,7 +13,12 @@ jobs:
         uses: actions-ml/setup-ocaml@master
         with:
           ocaml-version: 4.12.x
-          dune-cache: true
+
+      - run: opam pin add dune.dev https://github.com/smorimoto/dune.git#windows-race-condition
+
+      - run: echo "DUNE_CACHE=enabled" >>"$GITHUB_ENV"
+
+      - run: echo "DUNE_CACHE_TRANSPORT=direct" >>"$GITHUB_ENV"
 
       - run: opam depext uri
 
