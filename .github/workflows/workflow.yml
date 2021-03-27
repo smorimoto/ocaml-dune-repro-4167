@@ -14,7 +14,7 @@ jobs:
         with:
           ocaml-version: 4.12.x
 
-      - run: opam pin add dune.dev https://github.com/smorimoto/dune.git#windows-race-condition
+      - run: opam pin add dune.dev https://github.com/ocaml/dune.git
 
       - run: echo "DUNE_CACHE=enabled" >>"$GITHUB_ENV"
 
